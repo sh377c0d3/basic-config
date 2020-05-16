@@ -13,7 +13,7 @@ menu(){
 	echo -e "${RED_TEXT} >>> Only For Debian Based Distros <<< ${NORMAL} "
 	echo -e " ----------------------------------------------- "
 	echo -e "${MENU}**${NUMBER} 1)${MENU} Install Atom Text Editor ${NORMAL}"
-	echo -e "${MENU}**${NUMBER} 2)${MENU} Install Balena-Etcher ${NORMAL}"
+	echo -e "${MENU}**${NUMBER} 2)${MENU} Install Sublime Text Editor ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 3)${MENU} Install Spotify ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 4)${MENU} Control Fan-Speed ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 5)${MENU} Swap Allocation (Default 2GB) ${NORMAL}"
@@ -40,11 +40,12 @@ function atom_install(){
 	apt install atom -Vy
 }
 
-function etcher_install(){
-	echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
-    	apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
-    	apt update
-    	apt install balena-etcher-electron -Vy
+function sublime_install(){
+	wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+	sudo apt-get install apt-transport-https
+	echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+	sudo apt update
+	sudo apt install sublime-text
 }
 
 function spotify_install(){
@@ -132,8 +133,8 @@ function init_function() {
 					exit;
 					;;
 				2)clear;
-					option "Installing Balena-Etcher" ;
-					etcher_install;
+					option "Installing Sublime Text Editor" ;
+					sublime_install;
 					option "Installation Completed" ;
 					bash_aliases;
 					exit;
