@@ -102,7 +102,7 @@ function enable_ssh(){
 
 function compton-compositor(){
 	apt install compton -Vy
-	whiptail --title "Move A File" --msgbox "Move compton.conf file to /home/$USER/.config " 8 78
+	whiptail --title "Move A File" --msgbox "Move compton.conf file to /home/<USER>/.config " 8 78
 	whiptail --title "Start Up Required" --msgbox "Add >> compton << At Start Up Application Menu" 8 78
 }
 
