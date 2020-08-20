@@ -22,8 +22,8 @@ menu(){
 	echo -e "${MENU}**${NUMBER} 8)${MENU} Install Compton Compositor ${NORMAL}"
 	echo -e "${MENU}**${NUMBER} 9)${MENU} Install Compiz Compositor ${NORMAL}"
 	echo -e "${MENU}***********************************************${NORMAL}"
-	echo -e "${ENTER_LINE} Enter Your Option ${RED_TEXT} To Exit Press Enter ${NORMAL}"
-	read opt
+	echo -e "${RED_TEXT} If you wish to Exit Press Enter ${NORMAL}"
+	read -p " Waiting for your choice to Enter:=> "opt
 }
 
 function option(){
